@@ -1,0 +1,42 @@
+extends ../index
+block content
+    
+                // Form to edit animal
+                form.mb-3(action=`/update-animal-list`, method="POST")
+                div.form-group    
+                    label(for="homeZoo", class="form-label") Home Zoo
+                    input(type="text", class="form-control", id="homeZoo", name="zoo", value=animal.zoo)
+
+                    label(for="scientificName", class="form-label") Scientific Name
+                    input(type="text", class="form-control", id="scientificName", name="scientificName", value=animal.scientificName)
+
+                    label(for="commonName", class="form-label") Common Name
+                    input(type="text", class="form-control", id="commonName", name="commonName", value=animal.commonName)
+
+                    label(for="givenName", class="form-label") Given Name
+                    input(type="text", class="form-control", id="givenName", name="givenName", value=animal.givenName)
+
+                    
+                    label(for="male", class="form-label") Male
+                    input(type="radio", id="male", name="gender", value="Male", checked=animal.gender === 'Male')
+                    label(for="female", class="form-label") Female
+                    input(type="radio", id="female", name="gender", value="Female", checked=animal.gender === 'Female')
+                    
+                    - const formattedDate = new Date(animal.dateOfBirth).toISOString().split('T')[0];
+                    input(type="date", id="birthDate", name="dateOfBirth", value=formattedDate)
+                    br
+                    label(for="age", class="form-label") Age
+                    input(type="text", class="form-control", id="age", name="age", value=animal.age)
+                    
+                    label(for="available", class="form-label") Available
+                    input(type="radio", id="available", name="isTransportable", value="true", checked=animal.isTransportable)
+                    label(for="unavailable", class="form-label") Unavailable
+                    input(type="radio", id="unavailable", name="isTransportable", value="false", checked=!animal.isTransportable)
+                    button(type="submit", class="btn btn-primary w-100 mt-3") Save
+
+                // Form to delete animal
+                form.mb-3(action="/Animal-Delete", method="POST")
+                    // Hidden input to specify the animal ID
+                    input(type="hidden", name="id", value=animal._id)
+                    // Delete Button
+                    button(type="submit", class="btn btn-danger w-100") Delete

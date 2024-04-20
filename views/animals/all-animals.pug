@@ -1,0 +1,19 @@
+extends ../index
+
+block content
+  table.table
+    thead
+      tr.table-dark
+        each header in ['Zoo', 'Scientific Name', 'Common Name', 'Given Name', 'Gender', 'Date of Birth', 'Age', 'Transportable', 'Edit']
+          th= header
+
+    tbody 
+      each animal in animals
+        tr
+          each key in ['zoo', 'scientificName', 'commonName', 'givenName', 'gender', 'dateOfBirth', 'age', 'isTransportable']
+            td= animal[key]
+
+          td
+            form(action="/Upload-animal" method="POST")
+              input(type="hidden" name="id" value=animal._id)
+              button(type="submit" class="btn btn-primary") Edit

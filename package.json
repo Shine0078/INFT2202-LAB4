@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.3.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2"
+  },
+  "name": "inft2202-lab4",
+  "version": "1.0.0",
+  "description": "Lab 4 Assignment Group 4 , Final Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Abraham & Sandeep Kumar",
+  "license": "ISC"
+}

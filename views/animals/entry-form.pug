@@ -1,0 +1,39 @@
+extends ../index
+block content
+    .d-flex.align-items-center.justify-content-center
+
+        // Form for new animal
+        form(action="/Entry-Form", method="POST")
+            .mb-3
+                label(for="homeZoo", class="form-label") Home Zoo
+                input(type="text", class="form-control", id="homeZoo", name="zoo")
+
+                label(for="scientificName", class="form-label") Scientific Name
+                input(type="text", class="form-control", id="scientificName", name="scientificName")
+
+                label(for="commonName", class="form-label") Common Name
+                input(type="text", class="form-control", id="commonName", name="commonName")
+                label(for="givenName", class="form-label") Given Name
+                input(type="text", class="form-control", id="givenName", name="givenName")
+
+
+                p Gender
+                label(for="male", class="form-label") Male
+                input(type="radio", id="male", name="gender", value="Male")
+                label(for="female", class="form-label") Female
+                input(type="radio", id="female", name="gender", value="Female")
+                p Date of Birth
+                input(type="date", id="birthDate", name="dateOfBirth")
+                br
+                label(for="age", class="form-label") Age
+                input(type="text", class="form-control", id="age", name="age")
+
+                
+                p Is Transportable
+                label(for="available", class="form-label") Available
+                input(type="radio", id="available", name="isTransportable", value="Available")
+                label(for="unavailable", class="form-label") Unavailable
+                input(type="radio", id="unavailable", name="isTransportable", value="Unavailable")
+            div
+                button(type="submit", class="btn btn-primary") Submit
+                button(type="reset", class="btn btn-primary") Reset
